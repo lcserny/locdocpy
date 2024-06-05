@@ -86,7 +86,7 @@ def run():
     if "--network" in runflags:
         runflags += f" --network {docker_net}"
 
-    logger.info(f"Starting new docker container {docker_container}")
+    logger.info(f"Starting new docker container '{docker_container}'")
     # docker python SDK limitation fix: passing dynamic args to run cmd
     subprocess.run(["bash", "-c", f"docker run -d {runflags} --name {docker_container} {docker_image}"])
 
