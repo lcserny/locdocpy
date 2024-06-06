@@ -83,7 +83,7 @@ def run():
         container.remove(v=True)
 
     runflags = manifest_props["deploy"]["runFlags"]
-    if "--network" in runflags:
+    if "--network" not in runflags:
         runflags += f" --network {docker_net}"
 
     logger.info(f"Starting new docker container '{docker_container}'")
